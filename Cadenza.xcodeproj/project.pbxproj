@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FF408AE19C89AF7005751BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AD19C89AF7005751BC /* Foundation.framework */; };
+		4FF408B319C89AF9005751BC /* Cadenza.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FF408B219C89AF9005751BC /* Cadenza.h */; };
+		4FF408B519C89AF9005751BC /* Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408B419C89AF9005751BC /* Cadenza.m */; };
+		4FF408BC19C89AF9005751BC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408BB19C89AF9005751BC /* XCTest.framework */; };
+		4FF408BD19C89AF9005751BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AD19C89AF7005751BC /* Foundation.framework */; };
+		4FF408BF19C89AF9005751BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408BE19C89AF9005751BC /* UIKit.framework */; };
+		4FF408C219C89AF9005751BC /* libCadenza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AA19C89AF7005751BC /* libCadenza.a */; };
+		4FF408C819C89AF9005751BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FF408C619C89AF9005751BC /* InfoPlist.strings */; };
+		4FF408CA19C89AF9005751BC /* CadenzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408C919C89AF9005751BC /* CadenzaTests.m */; };
+		4FF408D519C89BA2005751BC /* UIView+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408D419C89BA2005751BC /* UIView+Cadenza.m */; };
+		4FF408D719C89BD2005751BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408D619C89BD2005751BC /* UIKit.framework */; };
+		4FF408DC19C89D99005751BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408DB19C89D99005751BC /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FF408C019C89AF9005751BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FF408A219C89AF7005751BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FF408A919C89AF7005751BC;
+			remoteInfo = Cadenza;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4FF408A819C89AF7005751BC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				4FF408B319C89AF9005751BC /* Cadenza.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4FF408AA19C89AF7005751BC /* libCadenza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCadenza.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FF408AD19C89AF7005751BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4FF408B119C89AF9005751BC /* Cadenza-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cadenza-Prefix.pch"; sourceTree = "<group>"; };
+		4FF408B219C89AF9005751BC /* Cadenza.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cadenza.h; sourceTree = "<group>"; };
+		4FF408B419C89AF9005751BC /* Cadenza.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cadenza.m; sourceTree = "<group>"; };
+		4FF408BA19C89AF9005751BC /* CadenzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadenzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FF408BB19C89AF9005751BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4FF408BE19C89AF9005751BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		4FF408C519C89AF9005751BC /* CadenzaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CadenzaTests-Info.plist"; sourceTree = "<group>"; };
+		4FF408C719C89AF9005751BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4FF408C919C89AF9005751BC /* CadenzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CadenzaTests.m; sourceTree = "<group>"; };
+		4FF408D319C89BA2005751BC /* UIView+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Cadenza.h"; sourceTree = "<group>"; };
+		4FF408D419C89BA2005751BC /* UIView+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Cadenza.m"; sourceTree = "<group>"; };
+		4FF408D619C89BD2005751BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4FF408DB19C89D99005751BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FF408A719C89AF7005751BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF408DC19C89D99005751BC /* CoreGraphics.framework in Frameworks */,
+				4FF408D719C89BD2005751BC /* UIKit.framework in Frameworks */,
+				4FF408AE19C89AF7005751BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FF408B719C89AF9005751BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF408C219C89AF9005751BC /* libCadenza.a in Frameworks */,
+				4FF408BC19C89AF9005751BC /* XCTest.framework in Frameworks */,
+				4FF408BF19C89AF9005751BC /* UIKit.framework in Frameworks */,
+				4FF408BD19C89AF9005751BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FF408A119C89AF7005751BC = {
+			isa = PBXGroup;
+			children = (
+				4FF408AF19C89AF9005751BC /* Cadenza */,
+				4FF408C319C89AF9005751BC /* CadenzaTests */,
+				4FF408AC19C89AF7005751BC /* Frameworks */,
+				4FF408AB19C89AF7005751BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FF408AB19C89AF7005751BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408AA19C89AF7005751BC /* libCadenza.a */,
+				4FF408BA19C89AF9005751BC /* CadenzaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FF408AC19C89AF7005751BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408DB19C89D99005751BC /* CoreGraphics.framework */,
+				4FF408D619C89BD2005751BC /* UIKit.framework */,
+				4FF408AD19C89AF7005751BC /* Foundation.framework */,
+				4FF408BB19C89AF9005751BC /* XCTest.framework */,
+				4FF408BE19C89AF9005751BC /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FF408AF19C89AF9005751BC /* Cadenza */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408B219C89AF9005751BC /* Cadenza.h */,
+				4FF408B419C89AF9005751BC /* Cadenza.m */,
+				4FF408B019C89AF9005751BC /* Supporting Files */,
+				4FF408D319C89BA2005751BC /* UIView+Cadenza.h */,
+				4FF408D419C89BA2005751BC /* UIView+Cadenza.m */,
+			);
+			path = Cadenza;
+			sourceTree = "<group>";
+		};
+		4FF408B019C89AF9005751BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408B119C89AF9005751BC /* Cadenza-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FF408C319C89AF9005751BC /* CadenzaTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408C919C89AF9005751BC /* CadenzaTests.m */,
+				4FF408C419C89AF9005751BC /* Supporting Files */,
+			);
+			path = CadenzaTests;
+			sourceTree = "<group>";
+		};
+		4FF408C419C89AF9005751BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FF408C519C89AF9005751BC /* CadenzaTests-Info.plist */,
+				4FF408C619C89AF9005751BC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FF408A919C89AF7005751BC /* Cadenza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FF408CD19C89AF9005751BC /* Build configuration list for PBXNativeTarget "Cadenza" */;
+			buildPhases = (
+				4FF408A619C89AF7005751BC /* Sources */,
+				4FF408A719C89AF7005751BC /* Frameworks */,
+				4FF408A819C89AF7005751BC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cadenza;
+			productName = Cadenza;
+			productReference = 4FF408AA19C89AF7005751BC /* libCadenza.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4FF408B919C89AF9005751BC /* CadenzaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FF408D019C89AF9005751BC /* Build configuration list for PBXNativeTarget "CadenzaTests" */;
+			buildPhases = (
+				4FF408B619C89AF9005751BC /* Sources */,
+				4FF408B719C89AF9005751BC /* Frameworks */,
+				4FF408B819C89AF9005751BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FF408C119C89AF9005751BC /* PBXTargetDependency */,
+			);
+			name = CadenzaTests;
+			productName = CadenzaTests;
+			productReference = 4FF408BA19C89AF9005751BC /* CadenzaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FF408A219C89AF7005751BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = goccy;
+			};
+			buildConfigurationList = 4FF408A519C89AF7005751BC /* Build configuration list for PBXProject "Cadenza" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4FF408A119C89AF7005751BC;
+			productRefGroup = 4FF408AB19C89AF7005751BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FF408A919C89AF7005751BC /* Cadenza */,
+				4FF408B919C89AF9005751BC /* CadenzaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FF408B819C89AF9005751BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF408C819C89AF9005751BC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FF408A619C89AF7005751BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF408B519C89AF9005751BC /* Cadenza.m in Sources */,
+				4FF408D519C89BA2005751BC /* UIView+Cadenza.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FF408B619C89AF9005751BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF408CA19C89AF9005751BC /* CadenzaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FF408C119C89AF9005751BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FF408A919C89AF7005751BC /* Cadenza */;
+			targetProxy = 4FF408C019C89AF9005751BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FF408C619C89AF9005751BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FF408C719C89AF9005751BC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FF408CB19C89AF9005751BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4FF408CC19C89AF9005751BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FF408CE19C89AF9005751BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Cadenza.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cadenza/Cadenza-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4FF408CF19C89AF9005751BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Cadenza.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cadenza/Cadenza-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4FF408D119C89AF9005751BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cadenza/Cadenza-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CadenzaTests/CadenzaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4FF408D219C89AF9005751BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cadenza/Cadenza-Prefix.pch";
+				INFOPLIST_FILE = "CadenzaTests/CadenzaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FF408A519C89AF7005751BC /* Build configuration list for PBXProject "Cadenza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FF408CB19C89AF9005751BC /* Debug */,
+				4FF408CC19C89AF9005751BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FF408CD19C89AF9005751BC /* Build configuration list for PBXNativeTarget "Cadenza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FF408CE19C89AF9005751BC /* Debug */,
+				4FF408CF19C89AF9005751BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FF408D019C89AF9005751BC /* Build configuration list for PBXNativeTarget "CadenzaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FF408D119C89AF9005751BC /* Debug */,
+				4FF408D219C89AF9005751BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FF408A219C89AF7005751BC /* Project object */;
+}
