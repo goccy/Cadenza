@@ -10,6 +10,9 @@
 
 @interface UIView (Cadenza)
 
+@property(nonatomic) void(^singleTapEventHandler)(UIGestureRecognizer *);
+@property(nonatomic) void(^longPressEventHandler)(UILongPressGestureRecognizer *);
+
 - (void)setX:(CGFloat)x;
 - (void)setY:(CGFloat)y;
 - (void)setWidth:(CGFloat)width;
@@ -32,5 +35,7 @@
 - (CGFloat)centerY;
 - (CGPoint)absolutePosition;
 - (UIView *)rootView;
+- (void)singleTap:(void(^)(UIGestureRecognizer *))callback;
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback;
 
 @end
