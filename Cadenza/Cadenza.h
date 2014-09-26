@@ -10,6 +10,7 @@
 
 #import "UIView+Cadenza.h"
 #import "UIImage+Cadenza.h"
+#import "UIViewController+Cadenza.h"
 
 @interface Cadenza : NSObject
 
