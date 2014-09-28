@@ -14,7 +14,7 @@
 @dynamic singleTapEventHandler;
 @dynamic longPressEventHandler;
 
-+ (UIView *)viewFromNibName:(NSString *)nibName
+- (instancetype)initWithNibName:(NSString *)nibName
 {
     return [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] objectAtIndex:0];
 }

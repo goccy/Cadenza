@@ -13,7 +13,7 @@
 @property(nonatomic) void(^singleTapEventHandler)(UIGestureRecognizer *);
 @property(nonatomic) void(^longPressEventHandler)(UILongPressGestureRecognizer *);
 
-+ (UIView *)viewFromNibName:(NSString *)nibName;
+- (instancetype)initWithNibName:(NSString *)nibName;
 - (void)setX:(CGFloat)x;
 - (void)setY:(CGFloat)y;
 - (void)setWidth:(CGFloat)width;
