@@ -12,6 +12,8 @@
 #import "UIImage+Cadenza.h"
 #import "UIViewController+Cadenza.h"
 #import "UISlider+Cadenza.h"
+#import "NSString+Cadenza.h"
+#import "ALAsset+Cadenza.h"
 
 @interface Cadenza : NSObject
 
