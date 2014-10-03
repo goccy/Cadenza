@@ -82,6 +82,16 @@
 
 - (BOOL)saveAllImage
 {
+    NSString *saveDirectoryPath = [NSString applicationSupportDirectory];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:saveDirectoryPath]) {
+        NSError *error = nil;
+        if (![[NSFileManager defaultManager] createDirectoryAtPath:saveDirectoryPath
+                                       withIntermediateDirectories:YES
+                                                        attributes:nil
+                                                             error:&error]) {
+            NSLog(@"[ERROR] Cannot create directory : %@", error);
+        }
+    }
     if (![self saveThumbnailImage]) {
         NSLog(@"[ERROR] Cannot save thumbnailImage. path = [%@]", [self thumbnailImageSavePath]);
         return NO;
