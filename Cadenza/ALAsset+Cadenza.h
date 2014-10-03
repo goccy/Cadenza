@@ -7,16 +7,26 @@
 //
 
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <UIKit/UIKit.h>
 
 @interface ALAsset (Cadenza)
 
 - (NSString *)imageBasePath;
+
 - (UIImage *)thumbnailImage;
 - (UIImage *)fullScreenImage;
 - (UIImage *)fullResolutionImage;
+
+/* for Writing to Disk */
 - (NSString *)thumbnailImageSavePath;
 - (NSString *)fullScreenImageSavePath;
 - (NSString *)fullResolutionImageSavePath;
+
+/* for Loading from Disk */
++ (NSString *)thumbnailImageSavePathWithBasePath:(NSString *)imageBasePath;
++ (NSString *)fullScreenImageSavePathWithBasePath:(NSString *)imageBasePath;
++ (NSString *)fullResolutionImageSavePathWithBasePath:(NSString *)imageBasePath;
+
 - (BOOL)saveThumbnailImage;
 - (BOOL)saveFullScreenImage;
 - (BOOL)saveFullResolutionImage;

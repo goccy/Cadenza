@@ -11,5 +11,6 @@
 @interface NSString (Cadenza)
 
 - (NSString *)md5;
++ (NSString *)applicationSupportDirectory ;
 
 @end

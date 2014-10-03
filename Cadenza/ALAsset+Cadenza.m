@@ -7,6 +7,7 @@
 //
 
 #import "ALAsset+Cadenza.h"
+#import "NSString+Cadenza.h"
 
 @implementation ALAsset (Cadenza)
 
@@ -33,23 +34,38 @@
 
 - (NSString *)thumbnailImageSavePath
 {
-    return [NSString stringWithFormat:@"thumbnail-%@", [self imageBasePath]];
+    return [NSString stringWithFormat:@"%@/thumbnail-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
+}
+
++ (NSString *)thumbnailImageSavePathWithBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/thumbnail-%@.png", [NSString applicationSupportDirectory], imageBasePath];
 }
 
 - (NSString *)fullScreenImageSavePath
 {
-    return [NSString stringWithFormat:@"fullScreen-%@", [self imageBasePath]];
+    return [NSString stringWithFormat:@"%@/fullScreen-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
+}
+
++ (NSString *)fullScreenImageSavePathWithBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/fullScreen-%@.png", [NSString applicationSupportDirectory], imageBasePath];
 }
 
 - (NSString *)fullResolutionImageSavePath
 {
-    return [NSString stringWithFormat:@"fullResolution-%@", [self imageBasePath]];
+    return [NSString stringWithFormat:@"%@/fullResolution-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
+}
+
++ (NSString *)fullResolutionImageSavePathWithBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/fullResolution-%@.png", [NSString applicationSupportDirectory], imageBasePath];
 }
 
 - (BOOL)saveThumbnailImage
 {
     NSData *thumbnailData = UIImagePNGRepresentation([self thumbnailImage]);
-    return [thumbnailData writeToFile:[self thumbnailImageSavePath] atomically:NO];
+    return [thumbnailData writeToFile:[self thumbnailImageSavePath] atomically:YES];
 }
 
 - (BOOL)saveFullScreenImage

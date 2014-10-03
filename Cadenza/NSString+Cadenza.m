@@ -25,4 +25,9 @@
             ];
 }
 
++ (NSString *)applicationSupportDirectory {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    return [paths objectAtIndex:0];
+}
+
 @end
