@@ -48,6 +48,16 @@
     return resizedImage;
 }
 
+- (UIImage *)resizeImageWithSize:(CGSize)requiredSize
+{
+    UIGraphicsBeginImageContext(requiredSize);
+    CGRect rect = CGRectMake(0, 0, requiredSize.width, requiredSize.height);
+    [self drawInRect:rect];
+    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resizedImage;
+}
+
 - (UIImage *)rotateImage:(CGFloat)angle
 {
     CGFloat width     = self.size.width;

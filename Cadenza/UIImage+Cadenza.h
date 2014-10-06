@@ -14,6 +14,7 @@
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderRetinaImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 
+- (UIImage *)resizeImageWithSize:(CGSize)requiredSize;
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize;
 - (UIImage *)rotateImage:(CGFloat)angle;
 - (UIImage *)maskImage:(UIImage *)maskImage maskPoint:(CGPoint)maskPoint;
