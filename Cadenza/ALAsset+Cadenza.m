@@ -23,7 +23,8 @@
 
 - (UIImage *)fullResolutionImage
 {
-    return [UIImage imageWithCGImage:[[self defaultRepresentation] fullResolutionImage]];
+    ALAssetRepresentation *rep = [self defaultRepresentation];
+    return [UIImage imageWithCGImage:[rep fullResolutionImage] scale:rep.scale orientation:rep.orientation];
 }
 
 - (NSString *)imageBasePath
@@ -90,20 +91,21 @@
                                                         attributes:nil
                                                              error:&error]) {
             NSLog(@"[ERROR] Cannot create directory : %@", error);
+            return NO;
         }
     }
-    if (![self saveThumbnailImage]) {
-        NSLog(@"[ERROR] Cannot save thumbnailImage. path = [%@]", [self thumbnailImageSavePath]);
-        return NO;
-    }
-    if (![self saveFullScreenImage]) {
-        NSLog(@"[ERROR] Cannot save fullScreenImage. path = [%@]", [self fullScreenImageSavePath]);
-        return NO;
-    }
-    if (![self saveFullResolutionImage]) {
-        NSLog(@"[ERROR] Cannot save fullResolutionImage. path = [%@]", [self fullResolutionImageSavePath]);
-        return NO;
-    }
+    dispatch_queue_t saveImageQueue = dispatch_queue_create("saveImageQueue", NULL);
+    dispatch_async(saveImageQueue, ^{
+        if (![self saveThumbnailImage]) {
+            NSLog(@"[ERROR] Cannot save thumbnailImage. path = [%@]", [self thumbnailImageSavePath]);
+        }
+        if (![self saveFullScreenImage]) {
+            NSLog(@"[ERROR] Cannot save fullScreenImage. path = [%@]", [self fullScreenImageSavePath]);
+        }
+        if (![self saveFullResolutionImage]) {
+            NSLog(@"[ERROR] Cannot save fullResolutionImage. path = [%@]", [self fullResolutionImageSavePath]);
+        }
+    });
     return YES;
 }
 
