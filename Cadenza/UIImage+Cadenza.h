@@ -16,7 +16,9 @@
 
 - (UIImage *)resizeImageWithSize:(CGSize)requiredSize;
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize;
+- (UIImage *)fixOrientation;
 - (UIImage *)rotateImage:(CGFloat)angle;
+- (UIImage *)rotateImageWithOrientation:(UIImageOrientation)orientation;
 - (UIImage *)maskImage:(UIImage *)maskImage maskPoint:(CGPoint)maskPoint;
 - (BOOL)writeImageToDisk:(NSString *)name;
 - (BOOL)writeImageToDisk:(NSString *)name withPath:(NSString *)path;

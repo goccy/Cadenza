@@ -50,11 +50,14 @@
 
 - (UIImage *)resizeImageWithSize:(CGSize)requiredSize
 {
-    UIGraphicsBeginImageContext(requiredSize);
-    CGRect rect = CGRectMake(0, 0, requiredSize.width, requiredSize.height);
-    [self drawInRect:rect];
-    UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    UIImage *resizedImage;
+    @autoreleasepool {
+        UIGraphicsBeginImageContext(requiredSize);
+        CGRect rect = CGRectMake(0, 0, requiredSize.width, requiredSize.height);
+        [self drawInRect:rect];
+        resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
     return resizedImage;
 }
 
@@ -66,16 +69,49 @@
     CGFloat newWidth  = fabs(width * cos(radian)) + fabs(height * sin(radian));
     CGFloat newHeight = fabs(width * sin(radian)) + fabs(height * cos(radian));
     
-    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIImage *rotatedImage;
+    @autoreleasepool {
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+        CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextTranslateCTM(context, newWidth / 2.0, newHeight / 2.0);
-    CGContextRotateCTM(context, radian);
-    CGContextTranslateCTM(context, -newWidth / 2.0, -newHeight / 2.0);
-    
-    [self drawInRect:CGRectMake((newWidth - width) / 2.0f, (newHeight - height) / 2.0f, width, height)];
-    UIImage *rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+        CGContextTranslateCTM(context, newWidth / 2.0, newHeight / 2.0);
+        CGContextRotateCTM(context, radian);
+        CGContextTranslateCTM(context, -newWidth / 2.0, -newHeight / 2.0);
+        
+        [self drawInRect:CGRectMake((newWidth - width) / 2.0f, (newHeight - height) / 2.0f, width, height)];
+        rotatedImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return rotatedImage;
+}
+
+- (UIImage *)fixOrientation
+{
+    UIImageOrientation orientation   = self.imageOrientation;
+    UIImage *removedOrientationImage = [UIImage imageWithCGImage:self.CGImage scale:1.0f orientation:UIImageOrientationUp];
+    return [removedOrientationImage rotateImageWithOrientation:orientation];
+}
+
+- (UIImage *)rotateImageWithOrientation:(UIImageOrientation)orientation
+{
+    UIImage *rotatedImage;
+    switch (orientation) {
+        case UIImageOrientationUp:
+            rotatedImage = self;
+            break;
+        case UIImageOrientationDown:
+            rotatedImage = [self rotateImage:180];
+            break;
+        case UIImageOrientationLeft:
+            rotatedImage = [self rotateImage:270];
+            break;
+        case UIImageOrientationRight:
+            rotatedImage = [self rotateImage:90];
+            break;
+        default:
+            rotatedImage = self;
+            break;
+    }
     return rotatedImage;
 }
 

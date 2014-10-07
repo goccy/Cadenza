@@ -8,6 +8,7 @@
 
 #import "ALAsset+Cadenza.h"
 #import "NSString+Cadenza.h"
+#import "UIImage+Cadenza.h"
 
 @implementation ALAsset (Cadenza)
 
@@ -65,20 +66,34 @@
 
 - (BOOL)saveThumbnailImage
 {
-    NSData *thumbnailData = UIImagePNGRepresentation([self thumbnailImage]);
-    return [thumbnailData writeToFile:[self thumbnailImageSavePath] atomically:YES];
+    BOOL isSuccess = NO;
+    @autoreleasepool {
+        NSData *thumbnailData = UIImagePNGRepresentation([self thumbnailImage]);
+        isSuccess = [thumbnailData writeToFile:[self thumbnailImageSavePath] atomically:YES];
+    }
+    return isSuccess;
 }
 
 - (BOOL)saveFullScreenImage
 {
-    NSData *fullScreenData = UIImagePNGRepresentation([self fullScreenImage]);
-    return [fullScreenData writeToFile:[self fullScreenImageSavePath] atomically:NO];
+    BOOL isSuccess = NO;
+    @autoreleasepool {
+        NSData *fullScreenData = UIImagePNGRepresentation([self fullScreenImage]);
+        isSuccess = [fullScreenData writeToFile:[self fullScreenImageSavePath] atomically:NO];
+    }
+    return isSuccess;
 }
 
 - (BOOL)saveFullResolutionImage
 {
-    NSData *fullResolutionData = UIImagePNGRepresentation([self fullResolutionImage]);
-    return [fullResolutionData writeToFile:[self fullResolutionImageSavePath] atomically:NO];
+    BOOL isSuccess = NO;
+    @autoreleasepool {
+        UIImage *fullResolutionImage = [self fullResolutionImage];
+        fullResolutionImage          = [fullResolutionImage fixOrientation];
+        NSData *fullResolutionData = UIImagePNGRepresentation(fullResolutionImage);
+        isSuccess = [fullResolutionData writeToFile:[self fullResolutionImageSavePath] atomically:NO];
+    }
+    return isSuccess;
 }
 
 - (BOOL)saveAllImage
