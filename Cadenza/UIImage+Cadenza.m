@@ -87,9 +87,14 @@
 
 - (UIImage *)fixOrientation
 {
-    UIImageOrientation orientation   = self.imageOrientation;
-    UIImage *removedOrientationImage = [UIImage imageWithCGImage:self.CGImage scale:1.0f orientation:UIImageOrientationUp];
-    return [removedOrientationImage rotateImageWithOrientation:orientation];
+    UIImage *rotatedImage;
+    @autoreleasepool {
+        UIImageOrientation orientation   = self.imageOrientation;
+        if (orientation == UIImageOrientationUp) return self;
+        UIImage *removedOrientationImage = [UIImage imageWithCGImage:self.CGImage scale:1.0f orientation:UIImageOrientationUp];
+        rotatedImage = [removedOrientationImage rotateImageWithOrientation:orientation];
+    }
+    return rotatedImage;
 }
 
 - (UIImage *)rotateImageWithOrientation:(UIImageOrientation)orientation
