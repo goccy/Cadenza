@@ -39,6 +39,11 @@
     return [NSString stringWithFormat:@"%@/thumbnail-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
 }
 
++ (NSString *)thumbnailImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/thumbnail-%@.png", directoryPath, imageBasePath];
+}
+
 + (NSString *)thumbnailImageSavePathWithBasePath:(NSString *)imageBasePath
 {
     return [NSString stringWithFormat:@"%@/thumbnail-%@.png", [NSString applicationSupportDirectory], imageBasePath];
@@ -49,6 +54,11 @@
     return [NSString stringWithFormat:@"%@/fullScreen-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
 }
 
++ (NSString *)fullScreenImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/fullScreen-%@.png", directoryPath, imageBasePath];
+}
+
 + (NSString *)fullScreenImageSavePathWithBasePath:(NSString *)imageBasePath
 {
     return [NSString stringWithFormat:@"%@/fullScreen-%@.png", [NSString applicationSupportDirectory], imageBasePath];
@@ -57,6 +67,11 @@
 - (NSString *)fullResolutionImageSavePath
 {
     return [NSString stringWithFormat:@"%@/fullResolution-%@.png", [NSString applicationSupportDirectory], [self imageBasePath]];
+}
+
++ (NSString *)fullResolutionImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath
+{
+    return [NSString stringWithFormat:@"%@/fullResolution-%@.png", directoryPath, imageBasePath];
 }
 
 + (NSString *)fullResolutionImageSavePathWithBasePath:(NSString *)imageBasePath

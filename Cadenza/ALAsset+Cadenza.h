@@ -23,9 +23,16 @@
 - (NSString *)fullResolutionImageSavePath;
 
 /* for Loading from Disk */
+/* the following three methods are searching from applicationSupportDirectory */
 + (NSString *)thumbnailImageSavePathWithBasePath:(NSString *)imageBasePath;
 + (NSString *)fullScreenImageSavePathWithBasePath:(NSString *)imageBasePath;
 + (NSString *)fullResolutionImageSavePathWithBasePath:(NSString *)imageBasePath;
+
++ (NSString *)thumbnailImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath;
++ (NSString *)fullScreenImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath;
++ (NSString *)fullResolutionImageSavePathWithDirectoryPath:(NSString *)directoryPath withBasePath:(NSString *)imageBasePath;
+
+
 
 - (BOOL)saveThumbnailImage;
 - (BOOL)saveFullScreenImage;
