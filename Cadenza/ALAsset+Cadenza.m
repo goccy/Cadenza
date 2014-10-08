@@ -14,7 +14,9 @@
 
 - (UIImage *)thumbnailImage
 {
-    return [UIImage imageWithCGImage:[self thumbnail]];
+    /* [self thumbnail] is JPEG only */
+    CGSize thumbnailSize = [UIImage imageWithCGImage:[self thumbnail]].size;
+    return [[self fullResolutionImage] resizeImageAspectFit:thumbnailSize];
 }
 
 - (UIImage *)fullScreenImage
