@@ -14,6 +14,7 @@
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderRetinaImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 
+- (UIImage*)cropWithRect:(CGRect)rect;
 - (UIImage *)resizeImageWithSize:(CGSize)requiredSize;
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize;
 - (UIImage *)fixOrientation;
@@ -22,6 +23,5 @@
 - (UIImage *)maskImage:(UIImage *)maskImage maskPoint:(CGPoint)maskPoint;
 - (BOOL)writeImageToDisk:(NSString *)name;
 - (BOOL)writeImageToDisk:(NSString *)name withPath:(NSString *)path;
-
 
 @end

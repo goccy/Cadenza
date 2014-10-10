@@ -38,6 +38,17 @@
     return [UIImage renderImageWithBlock:size block:renderBlock withScale:2.0];
 }
 
+- (UIImage*)cropWithRect:(CGRect)rect
+{
+    UIImage *cropedImage = nil;
+    @autoreleasepool {
+        CGImageRef imageRef = CGImageCreateWithImageInRect([self CGImage], rect);
+        cropedImage         = [UIImage imageWithCGImage:imageRef];
+        CGImageRelease(imageRef);
+    }
+    return cropedImage;
+}
+
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize
 {
     UIGraphicsBeginImageContext(requiredSize);

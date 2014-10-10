@@ -152,6 +152,7 @@
     objc_setAssociatedObject(self, @"singleTapEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapEvent:)];
     [self addGestureRecognizer:singleTap];
+    self.userInteractionEnabled = YES;
 }
 
 - (void)singleTapEvent:(UIGestureRecognizer *)sender
@@ -165,6 +166,7 @@
     objc_setAssociatedObject(self, @"longPressEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
     UITapGestureRecognizer *longPress = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEvent:)];
     [self addGestureRecognizer:longPress];
+    self.userInteractionEnabled = YES;
 }
 
 - (void)longPressEvent:(UILongPressGestureRecognizer *)sender
