@@ -11,6 +11,7 @@
 @interface UIImageView (Cadenza)
 
 + (instancetype)imageNamed:(NSString *)imageName;
++ (instancetype)imageNamed:(NSString *)imageName useCache:(BOOL)useCache;
 - (instancetype)initWithFrame:(CGRect)frame withName:(NSString *)imageName;
 - (instancetype)initWithFrame:(CGRect)frame withName:(NSString *)imageName withContentMode:(UIViewContentMode)contentMode;
 - (void)clear;

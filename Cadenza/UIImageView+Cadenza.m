@@ -7,14 +7,23 @@
 //
 
 #import "UIImageView+Cadenza.h"
+#import "UIImage+Cadenza.h"
 
 @implementation UIImageView (Cadenza)
 
 + (instancetype)imageNamed:(NSString *)imageName
 {
     UIImageView *imageView = [[UIImageView alloc] init];
-    UIImage *image  = [UIImage imageNamed:imageName];
-    imageView.image = image;
+    UIImage *image         = [UIImage imageNamed:imageName];
+    imageView.image        = image;
+    return imageView;
+}
+
++ (instancetype)imageNamed:(NSString *)imageName useCache:(BOOL)useCache
+{
+    UIImageView *imageView = [[UIImageView alloc] init];
+    UIImage *image         = [UIImage imageNamed:imageName useCache:useCache];
+    imageView.image        = image;
     return imageView;
 }
 

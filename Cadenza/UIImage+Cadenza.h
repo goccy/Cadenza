@@ -10,6 +10,7 @@
 
 @interface UIImage (Cadenza)
 
++ (UIImage *)imageNamed:(NSString *)name useCache:(BOOL)useCache;
 + (UIImage *)renderHighQualityImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderRetinaImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;

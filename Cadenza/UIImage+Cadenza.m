@@ -38,7 +38,24 @@
     return [UIImage renderImageWithBlock:size block:renderBlock withScale:2.0];
 }
 
-- (UIImage*)cropWithRect:(CGRect)rect
++ (UIImage *)imageNamed:(NSString *)name useCache:(BOOL)useCache
+{
+    if (useCache) return [UIImage imageNamed:name];
+    NSString *bundlePath = [[NSBundle mainBundle] resourcePath];
+    NSString *normalPath = [NSString stringWithFormat:@"%@/%@", bundlePath, name];
+    BOOL isRetina        = ((int)[UIScreen mainScreen].scale == 2) ? YES : NO;
+    UIImage *ret = nil;
+    if (isRetina) {
+        NSString *baseName   = [name stringByDeletingPathExtension];
+        NSString *retinaPath = [NSString stringWithFormat:@"%@/%@@2x.png", bundlePath, baseName];
+        ret = [UIImage imageWithContentsOfFile:retinaPath];
+        if (ret) return ret;
+        return [UIImage imageWithContentsOfFile:normalPath];
+    }
+    return [UIImage imageWithContentsOfFile:normalPath];
+}
+
+- (UIImage *)cropWithRect:(CGRect)rect
 {
     UIImage *cropedImage = nil;
     @autoreleasepool {
