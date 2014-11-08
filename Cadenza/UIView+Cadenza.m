@@ -7,8 +7,17 @@
 //
 
 #import "UIView+Cadenza.h"
+#import <objc/runtime.h>
 
 @implementation UIView (Cadenza)
+
+@dynamic singleTapEventHandler;
+@dynamic longPressEventHandler;
+
+- (instancetype)initWithNibName:(NSString *)nibName
+{
+    return [[[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil] objectAtIndex:0];
+}
 
 - (void)setX:(CGFloat)x
 {
@@ -136,6 +145,34 @@
 {
     UIView *superView = self.superview;
     return (superView) ? [superView rootView] : self;
+}
+
+- (void)singleTap:(void(^)(UIGestureRecognizer *))callback
+{
+    objc_setAssociatedObject(self, @"singleTapEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapEvent:)];
+    [self addGestureRecognizer:singleTap];
+    self.userInteractionEnabled = YES;
+}
+
+- (void)singleTapEvent:(UIGestureRecognizer *)sender
+{
+    void(^callback)(UIGestureRecognizer *) = objc_getAssociatedObject(self, @"singleTapEventHandler");
+    if (callback) callback(sender);
+}
+
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback
+{
+    objc_setAssociatedObject(self, @"longPressEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
+    UITapGestureRecognizer *longPress = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEvent:)];
+    [self addGestureRecognizer:longPress];
+    self.userInteractionEnabled = YES;
+}
+
+- (void)longPressEvent:(UILongPressGestureRecognizer *)sender
+{
+    void(^callback)(UILongPressGestureRecognizer *) = objc_getAssociatedObject(self, @"longPressEventHandler");
+    if (callback) callback(sender);
 }
 
 @end

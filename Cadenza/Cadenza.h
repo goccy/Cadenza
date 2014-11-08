@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 
 #import "UIView+Cadenza.h"
+#import "UIImage+Cadenza.h"
+#import "UIViewController+Cadenza.h"
+#import "UISlider+Cadenza.h"
+#import "NSString+Cadenza.h"
+#import "ALAsset+Cadenza.h"
+#import "UIColor+Cadenza.h"
 
 @interface Cadenza : NSObject
 

@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FE170241A0DD4850067AA3B /* ALAsset+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170101A0DD4850067AA3B /* ALAsset+Cadenza.m */; };
+		4FE170251A0DD4850067AA3B /* Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170131A0DD4850067AA3B /* Cadenza.m */; };
+		4FE170261A0DD4850067AA3B /* NSObject+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170151A0DD4850067AA3B /* NSObject+Cadenza.m */; };
+		4FE170271A0DD4850067AA3B /* NSString+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170171A0DD4850067AA3B /* NSString+Cadenza.m */; };
+		4FE170281A0DD4850067AA3B /* UIColor+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170191A0DD4850067AA3B /* UIColor+Cadenza.m */; };
+		4FE170291A0DD4850067AA3B /* UIImage+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1701B1A0DD4850067AA3B /* UIImage+Cadenza.m */; };
+		4FE1702A1A0DD4850067AA3B /* UIImageView+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1701D1A0DD4850067AA3B /* UIImageView+Cadenza.m */; };
+		4FE1702B1A0DD4850067AA3B /* UISlider+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1701F1A0DD4850067AA3B /* UISlider+Cadenza.m */; };
+		4FE1702C1A0DD4850067AA3B /* UIView+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170211A0DD4850067AA3B /* UIView+Cadenza.m */; };
+		4FE1702D1A0DD4850067AA3B /* UIViewController+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE170231A0DD4850067AA3B /* UIViewController+Cadenza.m */; };
 		4FF408AE19C89AF7005751BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AD19C89AF7005751BC /* Foundation.framework */; };
-		4FF408B319C89AF9005751BC /* Cadenza.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4FF408B219C89AF9005751BC /* Cadenza.h */; };
-		4FF408B519C89AF9005751BC /* Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408B419C89AF9005751BC /* Cadenza.m */; };
 		4FF408BC19C89AF9005751BC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408BB19C89AF9005751BC /* XCTest.framework */; };
 		4FF408BD19C89AF9005751BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AD19C89AF7005751BC /* Foundation.framework */; };
 		4FF408BF19C89AF9005751BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408BE19C89AF9005751BC /* UIKit.framework */; };
 		4FF408C219C89AF9005751BC /* libCadenza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408AA19C89AF7005751BC /* libCadenza.a */; };
 		4FF408C819C89AF9005751BC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FF408C619C89AF9005751BC /* InfoPlist.strings */; };
 		4FF408CA19C89AF9005751BC /* CadenzaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408C919C89AF9005751BC /* CadenzaTests.m */; };
-		4FF408D519C89BA2005751BC /* UIView+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408D419C89BA2005751BC /* UIView+Cadenza.m */; };
 		4FF408D719C89BD2005751BC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408D619C89BD2005751BC /* UIKit.framework */; };
 		4FF408DC19C89D99005751BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408DB19C89D99005751BC /* CoreGraphics.framework */; };
-		4FF408DF19C92EF7005751BC /* UIImage+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408DE19C92EF7005751BC /* UIImage+Cadenza.m */; };
 		4FF408E119C9343B005751BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408E019C9343B005751BC /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,30 +46,44 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				4FF408B319C89AF9005751BC /* Cadenza.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4FE1700F1A0DD4850067AA3B /* ALAsset+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170101A0DD4850067AA3B /* ALAsset+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+Cadenza.m"; sourceTree = "<group>"; };
+		4FE170111A0DD4850067AA3B /* Cadenza-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cadenza-Prefix.pch"; sourceTree = "<group>"; };
+		4FE170121A0DD4850067AA3B /* Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cadenza.h; sourceTree = "<group>"; };
+		4FE170131A0DD4850067AA3B /* Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cadenza.m; sourceTree = "<group>"; };
+		4FE170141A0DD4850067AA3B /* NSObject+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170151A0DD4850067AA3B /* NSObject+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Cadenza.m"; sourceTree = "<group>"; };
+		4FE170161A0DD4850067AA3B /* NSString+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170171A0DD4850067AA3B /* NSString+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Cadenza.m"; sourceTree = "<group>"; };
+		4FE170181A0DD4850067AA3B /* UIColor+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170191A0DD4850067AA3B /* UIColor+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Cadenza.m"; sourceTree = "<group>"; };
+		4FE1701A1A0DD4850067AA3B /* UIImage+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cadenza.h"; sourceTree = "<group>"; };
+		4FE1701B1A0DD4850067AA3B /* UIImage+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cadenza.m"; sourceTree = "<group>"; };
+		4FE1701C1A0DD4850067AA3B /* UIImageView+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Cadenza.h"; sourceTree = "<group>"; };
+		4FE1701D1A0DD4850067AA3B /* UIImageView+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Cadenza.m"; sourceTree = "<group>"; };
+		4FE1701E1A0DD4850067AA3B /* UISlider+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISlider+Cadenza.h"; sourceTree = "<group>"; };
+		4FE1701F1A0DD4850067AA3B /* UISlider+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISlider+Cadenza.m"; sourceTree = "<group>"; };
+		4FE170201A0DD4850067AA3B /* UIView+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170211A0DD4850067AA3B /* UIView+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Cadenza.m"; sourceTree = "<group>"; };
+		4FE170221A0DD4850067AA3B /* UIViewController+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Cadenza.h"; sourceTree = "<group>"; };
+		4FE170231A0DD4850067AA3B /* UIViewController+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Cadenza.m"; sourceTree = "<group>"; };
 		4FF408AA19C89AF7005751BC /* libCadenza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCadenza.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF408AD19C89AF7005751BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FF408B119C89AF9005751BC /* Cadenza-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cadenza-Prefix.pch"; sourceTree = "<group>"; };
-		4FF408B219C89AF9005751BC /* Cadenza.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cadenza.h; sourceTree = "<group>"; };
-		4FF408B419C89AF9005751BC /* Cadenza.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cadenza.m; sourceTree = "<group>"; };
 		4FF408BA19C89AF9005751BC /* CadenzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CadenzaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF408BB19C89AF9005751BC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4FF408BE19C89AF9005751BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4FF408C519C89AF9005751BC /* CadenzaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CadenzaTests-Info.plist"; sourceTree = "<group>"; };
 		4FF408C719C89AF9005751BC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FF408C919C89AF9005751BC /* CadenzaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CadenzaTests.m; sourceTree = "<group>"; };
-		4FF408D319C89BA2005751BC /* UIView+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Cadenza.h"; sourceTree = "<group>"; };
-		4FF408D419C89BA2005751BC /* UIView+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Cadenza.m"; sourceTree = "<group>"; };
 		4FF408D619C89BD2005751BC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4FF408DB19C89D99005751BC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4FF408DD19C92EF7005751BC /* UIImage+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cadenza.h"; sourceTree = "<group>"; };
-		4FF408DE19C92EF7005751BC /* UIImage+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cadenza.m"; sourceTree = "<group>"; };
 		4FF408E019C9343B005751BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -128,13 +148,28 @@
 		4FF408AF19C89AF9005751BC /* Cadenza */ = {
 			isa = PBXGroup;
 			children = (
-				4FF408B219C89AF9005751BC /* Cadenza.h */,
-				4FF408B419C89AF9005751BC /* Cadenza.m */,
+				4FE1700F1A0DD4850067AA3B /* ALAsset+Cadenza.h */,
+				4FE170101A0DD4850067AA3B /* ALAsset+Cadenza.m */,
+				4FE170111A0DD4850067AA3B /* Cadenza-Prefix.pch */,
+				4FE170121A0DD4850067AA3B /* Cadenza.h */,
+				4FE170131A0DD4850067AA3B /* Cadenza.m */,
+				4FE170141A0DD4850067AA3B /* NSObject+Cadenza.h */,
+				4FE170151A0DD4850067AA3B /* NSObject+Cadenza.m */,
+				4FE170161A0DD4850067AA3B /* NSString+Cadenza.h */,
+				4FE170171A0DD4850067AA3B /* NSString+Cadenza.m */,
+				4FE170181A0DD4850067AA3B /* UIColor+Cadenza.h */,
+				4FE170191A0DD4850067AA3B /* UIColor+Cadenza.m */,
+				4FE1701A1A0DD4850067AA3B /* UIImage+Cadenza.h */,
+				4FE1701B1A0DD4850067AA3B /* UIImage+Cadenza.m */,
+				4FE1701C1A0DD4850067AA3B /* UIImageView+Cadenza.h */,
+				4FE1701D1A0DD4850067AA3B /* UIImageView+Cadenza.m */,
+				4FE1701E1A0DD4850067AA3B /* UISlider+Cadenza.h */,
+				4FE1701F1A0DD4850067AA3B /* UISlider+Cadenza.m */,
+				4FE170201A0DD4850067AA3B /* UIView+Cadenza.h */,
+				4FE170211A0DD4850067AA3B /* UIView+Cadenza.m */,
+				4FE170221A0DD4850067AA3B /* UIViewController+Cadenza.h */,
+				4FE170231A0DD4850067AA3B /* UIViewController+Cadenza.m */,
 				4FF408B019C89AF9005751BC /* Supporting Files */,
-				4FF408D319C89BA2005751BC /* UIView+Cadenza.h */,
-				4FF408D419C89BA2005751BC /* UIView+Cadenza.m */,
-				4FF408DD19C92EF7005751BC /* UIImage+Cadenza.h */,
-				4FF408DE19C92EF7005751BC /* UIImage+Cadenza.m */,
 			);
 			path = Cadenza;
 			sourceTree = "<group>";
@@ -246,9 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF408B519C89AF9005751BC /* Cadenza.m in Sources */,
-				4FF408D519C89BA2005751BC /* UIView+Cadenza.m in Sources */,
-				4FF408DF19C92EF7005751BC /* UIImage+Cadenza.m in Sources */,
+				4FE1702C1A0DD4850067AA3B /* UIView+Cadenza.m in Sources */,
+				4FE170251A0DD4850067AA3B /* Cadenza.m in Sources */,
+				4FE170241A0DD4850067AA3B /* ALAsset+Cadenza.m in Sources */,
+				4FE170291A0DD4850067AA3B /* UIImage+Cadenza.m in Sources */,
+				4FE1702A1A0DD4850067AA3B /* UIImageView+Cadenza.m in Sources */,
+				4FE1702D1A0DD4850067AA3B /* UIViewController+Cadenza.m in Sources */,
+				4FE170271A0DD4850067AA3B /* NSString+Cadenza.m in Sources */,
+				4FE170261A0DD4850067AA3B /* NSObject+Cadenza.m in Sources */,
+				4FE170281A0DD4850067AA3B /* UIColor+Cadenza.m in Sources */,
+				4FE1702B1A0DD4850067AA3B /* UISlider+Cadenza.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
