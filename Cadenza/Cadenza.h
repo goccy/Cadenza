@@ -10,6 +10,8 @@
 
 #import "UIView+Cadenza.h"
 #import "UIImage+Cadenza.h"
+#import "UIImageView+Cadenza.h"
+#import "UIAlertView+Cadenza.h"
 #import "UIViewController+Cadenza.h"
 #import "UISlider+Cadenza.h"
 #import "NSString+Cadenza.h"
