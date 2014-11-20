@@ -10,7 +10,14 @@
 
 @interface UIAlertView (Cadenza)
 
-- (void)initWithTitle:(NSString *)title message:(NSString *)message removeInterval:(CGFloat)interval;
-- (void)initWithTitle:(NSString *)title message:(NSString *)message removeInterval:(CGFloat)interval callbackHandler:(void(^)(void))callbackHandler;
+@property(nonatomic) void(^leftButtonEventHandler)(UIAlertView *);
+@property(nonatomic) void(^rightButtonEventHandler)(UIAlertView *);
+
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitle:(NSString *)buttonTitle callbackHandler:(void(^)(UIAlertView *))callbackHandler;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message
+              leftButtonTitle:(NSString *)leftButtonTitle leftButtonCallbackHandler:(void(^)(UIAlertView *))leftButtonCallbackHandler
+             rightButtonTitle:(NSString *)rightButtonTitle rightButtonCallbackHandler:(void(^)(UIAlertView *))rightButtonCallbackHandler;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message removeInterval:(CGFloat)interval;
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message removeInterval:(CGFloat)interval callbackHandler:(void(^)(void))callbackHandler;
 
 @end
