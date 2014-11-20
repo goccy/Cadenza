@@ -10,8 +10,7 @@
 
 @interface UIAlertView (Cadenza)
 
-@property(nonatomic) void(^leftButtonEventHandler)(UIAlertView *);
-@property(nonatomic) void(^rightButtonEventHandler)(UIAlertView *);
+@property(nonatomic) id internalDelegate;
 
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitle:(NSString *)buttonTitle callbackHandler:(void(^)(UIAlertView *))callbackHandler;
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message

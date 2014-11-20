@@ -9,13 +9,38 @@
 #import "UIAlertView+Cadenza.h"
 #import <objc/runtime.h>
 
+@interface UIAlertViewInternal : NSObject<UIAlertViewDelegate>
+
+@property(nonatomic, strong) void(^leftButtonEventHandler)(UIAlertView *);
+@property(nonatomic, strong) void(^rightButtonEventHandler)(UIAlertView *);
+
+@end
+
+@implementation UIAlertViewInternal
+
+- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0: {
+            void(^callback)(UIAlertView *) = self.leftButtonEventHandler;
+            if (callback) callback(alertView);
+            break;
+        }
+        case 1: {
+            void(^callback)(UIAlertView *) = self.rightButtonEventHandler;
+            if (callback) callback(alertView);
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+@end
+
 @implementation UIAlertView (Cadenza)
 
-static const char *leftButtonEventHandlerKey  = "leftButtonEventHandler";
-static const char *rightButtonEventHandlerKey = "rightButtonEventHandler";
-
-@dynamic leftButtonEventHandler;
-@dynamic rightButtonEventHandler;
+@dynamic internalDelegate;
 
 - (void)removeHandler:(NSTimer *)timer
 {
@@ -44,33 +69,16 @@ static const char *rightButtonEventHandlerKey = "rightButtonEventHandler";
     return alertView;
 }
 
-- (void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 0: {
-            void(^callback)(UIAlertView *) = objc_getAssociatedObject(alertView, leftButtonEventHandlerKey);
-            if (callback) callback(alertView);
-            break;
-        }
-        case 1: {
-            void(^callback)(UIAlertView *) = objc_getAssociatedObject(alertView, rightButtonEventHandlerKey);
-            if (callback) callback(alertView);
-            break;
-        }
-        default:
-            break;
-    }
-}
-
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message buttonTitle:(NSString *)buttonTitle callbackHandler:(void(^)(UIAlertView *))callbackHandler
 {
+    UIAlertViewInternal *internal    = [[UIAlertViewInternal alloc] init];
+    internal.leftButtonEventHandler  = callbackHandler;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                      message:message
-                                     delegate:nil
-                            cancelButtonTitle:buttonTitle
-                            otherButtonTitles:nil];
-    alertView.delegate = alertView;
-    objc_setAssociatedObject(alertView, leftButtonEventHandlerKey, callbackHandler, OBJC_ASSOCIATION_RETAIN);
+                                                      message:message
+                                                     delegate:internal
+                                            cancelButtonTitle:buttonTitle
+                                            otherButtonTitles:nil];
+    objc_setAssociatedObject(alertView, @"internalDelegate", internal, OBJC_ASSOCIATION_RETAIN);
     return alertView;
 }
 
@@ -79,14 +87,15 @@ static const char *rightButtonEventHandlerKey = "rightButtonEventHandler";
               rightButtonTitle:(NSString *)rightButtonTitle rightButtonCallbackHandler:(void(^)(UIAlertView *))rightButtonCallbackHandler
 
 {
+    UIAlertViewInternal *internal    = [[UIAlertViewInternal alloc] init];
+    internal.leftButtonEventHandler  = leftButtonCallbackHandler;
+    internal.rightButtonEventHandler = rightButtonCallbackHandler;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                        message:message
-                                                       delegate:nil
-                                              cancelButtonTitle:leftButtonTitle
-                                              otherButtonTitles:rightButtonTitle, nil];
-    alertView.delegate = alertView;
-    objc_setAssociatedObject(alertView, leftButtonEventHandlerKey,  leftButtonCallbackHandler,  OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(alertView, rightButtonEventHandlerKey, rightButtonCallbackHandler, OBJC_ASSOCIATION_RETAIN);
+                                      message:message
+                                     delegate:internal
+                            cancelButtonTitle:leftButtonTitle
+                            otherButtonTitles:rightButtonTitle, nil];
+    objc_setAssociatedObject(alertView, @"internalDelegate", internal, OBJC_ASSOCIATION_RETAIN);
     return alertView;
 }
 
