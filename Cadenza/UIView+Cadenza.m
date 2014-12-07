@@ -161,10 +161,11 @@
     if (callback) callback(sender);
 }
 
-- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration
 {
     objc_setAssociatedObject(self, @"longPressEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
-    UITapGestureRecognizer *longPress = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEvent:)];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEvent:)];
+    longPress.minimumPressDuration = duration;
     [self addGestureRecognizer:longPress];
     self.userInteractionEnabled = YES;
 }

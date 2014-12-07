@@ -37,6 +37,6 @@
 - (CGPoint)absolutePosition;
 - (UIView *)rootView;
 - (void)singleTap:(void(^)(UIGestureRecognizer *))callback;
-- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback;
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration;
 
 @end
