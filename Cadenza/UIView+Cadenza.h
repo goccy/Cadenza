@@ -10,8 +10,14 @@
 
 @interface UIView (Cadenza)
 
+@property(nonatomic) UITapGestureRecognizer *singleTapRecognizer;
+@property(nonatomic) UILongPressGestureRecognizer *longPressRecognizer;
+@property(nonatomic) UIRotationGestureRecognizer *rotateRecognizer;
+@property(nonatomic) UIPinchGestureRecognizer *pinchRecognizer;
 @property(nonatomic) void(^singleTapEventHandler)(UIGestureRecognizer *);
 @property(nonatomic) void(^longPressEventHandler)(UILongPressGestureRecognizer *);
+@property(nonatomic) void(^rotateEventHandler)(UIRotationGestureRecognizer *);
+@property(nonatomic) void(^pinchEventHandler)(UIPinchGestureRecognizer *);
 
 - (instancetype)initWithNibName:(NSString *)nibName;
 - (void)setX:(CGFloat)x;
@@ -37,6 +43,16 @@
 - (CGPoint)absolutePosition;
 - (UIView *)rootView;
 - (void)singleTap:(void(^)(UIGestureRecognizer *))callback;
+- (void)activateSingleTap;
+- (void)deactivateSingleTap;
+- (void)activateLongPress;
+- (void)deactivateLongPress;
+- (void)activateRotate;
+- (void)deactivateRotate;
+- (void)activatePinch;
+- (void)deactivatePinch;
 - (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration;
+- (void)rotate:(void(^)(UIRotationGestureRecognizer *))callback;
+- (void)pinch:(void(^)(UIPinchGestureRecognizer *))callback;
 
 @end
