@@ -73,6 +73,11 @@
     self.center    = CGPointMake(center.x, centerY);
 }
 
+- (void)setZIndex:(NSInteger)zIndex
+{
+    self.layer.zPosition = zIndex;
+}
+
 - (CGFloat)x
 {
     return self.frame.origin.x;
@@ -111,6 +116,11 @@
 - (CGFloat)centerY
 {
     return self.center.y;
+}
+
+- (NSInteger)zIndex
+{
+    return self.layer.zPosition;
 }
 
 - (CGPoint)leftTop

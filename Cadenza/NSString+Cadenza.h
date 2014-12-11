@@ -10,6 +10,8 @@
 
 @interface NSString (Cadenza)
 
+- (id)loadFromJSONFile;
+- (id)jsonToObject;
 - (NSString *)md5;
 + (NSString *)applicationSupportDirectory ;
 

@@ -28,6 +28,7 @@
 - (void)setSize:(CGSize)size;
 - (void)setCenterX:(CGFloat)centerX;
 - (void)setCenterY:(CGFloat)centerY;
+- (void)setZIndex:(NSInteger)zIndex;
 - (CGFloat)x;
 - (CGFloat)y;
 - (CGFloat)width;
@@ -40,6 +41,7 @@
 - (CGPoint)origin;
 - (CGFloat)centerX;
 - (CGFloat)centerY;
+- (NSInteger)zIndex;
 - (CGPoint)absolutePosition;
 - (UIView *)rootView;
 - (void)singleTap:(void(^)(UIGestureRecognizer *))callback;

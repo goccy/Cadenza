@@ -11,6 +11,29 @@
 
 @implementation NSString (Cadenza)
 
+- (id)loadFromJSONFile
+{
+    NSError *error = nil;
+    NSString *json = [[NSString alloc] initWithContentsOfFile:self encoding:NSUTF8StringEncoding error: &error];
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    return [json jsonToObject];
+}
+
+- (id)jsonToObject
+{
+    NSData *jsonData = [self dataUsingEncoding:NSUnicodeStringEncoding];
+    NSError *error   = nil;
+    id jsonObject    = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                       options:NSJSONReadingAllowFragments
+                                                         error:&error];
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    return jsonObject;
+}
+
 - (NSString *)md5
 {
     const char *cstr = [self UTF8String];
