@@ -11,6 +11,23 @@
 
 @implementation UIImage (Cadenza)
 
++ (UIImage *)imageWithColor:(UIColor *)color
+{
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    return [UIImage imageWithColor:color withRect:rect];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color withRect:(CGRect)rect
+{
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(contextRef, [color CGColor]);
+    CGContextFillRect(contextRef, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock withScale:(CGFloat)scale
 {
     UIImage *renderedImage;

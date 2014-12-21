@@ -10,6 +10,8 @@
 
 @interface UIImage (Cadenza)
 
++ (UIImage *)imageWithColor:(UIColor *)color withRect:(CGRect)rect;
++ (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageNamed:(NSString *)name useCache:(BOOL)useCache;
 + (UIImage *)renderHighQualityImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
