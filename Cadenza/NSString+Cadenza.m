@@ -11,6 +11,22 @@
 
 @implementation NSString (Cadenza)
 
+- (NSInteger)numberOfLines
+{
+    NSInteger newLineCharCount = [self length] - [[self stringByReplacingOccurrencesOfString:@"\n" withString:@""] length];
+    newLineCharCount /= [@"\n" length];
+    return newLineCharCount + 1;
+}
+
+- (CGRect)contentFrame:(UIFont *)font
+{
+    if (!self.length) return CGRectZero;
+    return [self boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+                              options:NSStringDrawingUsesLineFragmentOrigin
+                           attributes:@{ NSFontAttributeName : font }
+                              context:nil];
+}
+
 - (id)loadFromJSONFile
 {
     NSError *error = nil;

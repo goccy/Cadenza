@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (Cadenza)
 
+- (NSInteger)numberOfLines;
+- (CGRect)contentFrame:(UIFont *)font;
 - (id)loadFromJSONFile;
 - (id)jsonToObject;
 - (NSString *)md5;
