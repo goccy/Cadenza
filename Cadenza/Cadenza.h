@@ -17,6 +17,7 @@
 #import "NSString+Cadenza.h"
 #import "ALAsset+Cadenza.h"
 #import "UIColor+Cadenza.h"
+#import "NSMutableAttributedString+Cadenza.h"
 
 @interface Cadenza : NSObject
 
