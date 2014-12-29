@@ -17,6 +17,8 @@
 + (UIImage *)renderImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 + (UIImage *)renderRetinaImageWithBlock:(CGSize)size block:(void(^)(void))renderBlock;
 
+- (BOOL)hasAlphaChannel;
+- (UIImage *)invertedAlpha;
 - (UIImage*)cropWithRect:(CGRect)rect;
 - (UIImage *)resizeImageWithSize:(CGSize)requiredSize;
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize;

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "NSObject+Cadenza.h"
 #import "UIView+Cadenza.h"
 #import "UIImage+Cadenza.h"
 #import "UIImageView+Cadenza.h"

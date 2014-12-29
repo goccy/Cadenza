@@ -12,7 +12,7 @@
 
 - (BOOL)isEqualToColor:(UIColor *)color
 {
-    const int numComponents    = CGColorGetNumberOfComponents(color.CGColor);
+    const size_t numComponents    = CGColorGetNumberOfComponents(color.CGColor);
     const CGFloat *components  = CGColorGetComponents(color.CGColor);
     
     float red, blue, green, alpha = 0.0f;
@@ -28,7 +28,7 @@
         alpha   = components[1];
     }
     
-    const int currentNumComponents   = CGColorGetNumberOfComponents(self.CGColor);
+    const size_t currentNumComponents   = CGColorGetNumberOfComponents(self.CGColor);
     const CGFloat *currentComponents = CGColorGetComponents(self.CGColor);
     float currentRed, currentBlue, currentGreen, currentAlpha = 0.0f;
     if (currentNumComponents == 4) {

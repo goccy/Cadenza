@@ -27,7 +27,7 @@
 - (UIImage *)fullResolutionImage
 {
     ALAssetRepresentation *rep = [self defaultRepresentation];
-    return [UIImage imageWithCGImage:[rep fullResolutionImage] scale:rep.scale orientation:rep.orientation];
+    return [UIImage imageWithCGImage:[rep fullResolutionImage] scale:rep.scale orientation:(UIImageOrientation)rep.orientation];
 }
 
 - (NSString *)imageBasePath

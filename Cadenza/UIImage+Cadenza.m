@@ -201,6 +201,105 @@
     return newImage;
 }
 
+- (UIImage *)invertedAlpha
+{
+    BOOL hasAlpha = [self hasAlphaChannel];
+    if (!hasAlpha) return nil;
+    
+    CGColorSpaceRef colorSpace     = CGImageGetColorSpace(self.CGImage);
+    CGColorSpaceRef grayColorSpace = CGColorSpaceCreateDeviceGray();
+    
+    BOOL isGrayScale = (colorSpace == grayColorSpace) ? YES : NO;
+    
+    CGColorSpaceRelease(colorSpace);
+    CGColorSpaceRelease(grayColorSpace);
+    
+    if (isGrayScale) {
+        return [self convertGrayScalePixels:^(UInt8 *buf, UInt8 gray, UInt8 alpha, int x, int y) {
+            *(buf + 0) = 0;
+            *(buf + 1) = 255 - alpha;
+        }];
+    } else {
+        return [self convertRGBAPixels:^(UInt8 *buf, UInt8 r, UInt8 g, UInt8 b, UInt8 a, int x, int y) {
+            *(buf + 0) = 0;
+            *(buf + 1) = 0;
+            *(buf + 2) = 0;
+            *(buf + 3) = 255 - a;
+        }];
+    }
+}
+
+- (BOOL)hasAlphaChannel
+{
+    CGImageRef cgImageRef = self.CGImage;
+    CGImageAlphaInfo info = CGImageGetAlphaInfo(cgImageRef);
+    return (info == kCGImageAlphaPremultipliedLast  ||
+            info == kCGImageAlphaPremultipliedFirst ||
+            info == kCGImageAlphaLast               ||
+            info == kCGImageAlphaFirst) ? YES : NO;
+}
+
+- (UIImage *)convertRGBAPixels:(void(^)(UInt8 *buf, UInt8 r, UInt8 g, UInt8 b, UInt8 a, int x, int y))convertBlock
+{
+    return [self convertPixelsBase:^(UInt8 *pixels, size_t bytesPerRow, int x, int y) {
+            UInt8 *buf = pixels + y * bytesPerRow + x * 4;
+            UInt8 r    = *(buf + 0);
+            UInt8 g    = *(buf + 1);
+            UInt8 b    = *(buf + 2);
+            UInt8 a    = *(buf + 3);
+            convertBlock(buf, r, g, b, a, x, y);
+    }];
+}
+
+- (UIImage *)convertGrayScalePixels:(void(^)(UInt8 *buf, UInt8 gray, UInt8 alpha, int x, int y))convertBlock
+{
+    return [self convertPixelsBase:^(UInt8 *pixels, size_t bytesPerRow, int x, int y) {
+        UInt8 *buf  = pixels + y * bytesPerRow + x * 2;
+        UInt8 gray  = *(buf + 0);
+        UInt8 alpha = *(buf + 1);
+        convertBlock(buf, gray, alpha, x, y);
+    }];
+}
+
+- (UIImage *)convertPixelsBase:(void(^)(UInt8 *pixels, size_t bytesPerRow, int x, int y))convertProcess
+{
+    UIImage *image                 = self;
+    CGImageRef cgImage             = [image CGImage];
+    size_t bytesPerRow             = CGImageGetBytesPerRow(cgImage);
+    CGDataProviderRef dataProvider = CGImageGetDataProvider(cgImage);
+    CFDataRef data                 = CGDataProviderCopyData(dataProvider);
+    CFMutableDataRef inputData     = CFDataCreateMutableCopy(0, 0, data);
+    UInt8 *pixels                  = (UInt8 *)CFDataGetMutableBytePtr(inputData);
+    
+    for (int y = 0 ; y < image.size.height; y++){
+        for (int x = 0; x < image.size.width; x++){
+            convertProcess(pixels, bytesPerRow, x, y);
+        }
+    }
+    
+    CFDataRef resultData                 = CFDataCreate(NULL, pixels, CFDataGetLength(data));
+    CGDataProviderRef resultDataProvider = CGDataProviderCreateWithCFData(resultData);
+    CGImageRef resultCgImage             = CGImageCreate(CGImageGetWidth(cgImage),
+                                                         CGImageGetHeight(cgImage),
+                                                         CGImageGetBitsPerComponent(cgImage),
+                                                         CGImageGetBitsPerPixel(cgImage),
+                                                         bytesPerRow,
+                                                         CGImageGetColorSpace(cgImage),
+                                                         CGImageGetBitmapInfo(cgImage),
+                                                         resultDataProvider,
+                                                         NULL,
+                                                         CGImageGetShouldInterpolate(cgImage),
+                                                         CGImageGetRenderingIntent(cgImage));
+    UIImage *result = [[UIImage alloc] initWithCGImage:resultCgImage];
+    
+    CGImageRelease(resultCgImage);
+    CFRelease(resultDataProvider);
+    CFRelease(resultData);
+    CFRelease(data);
+    free(pixels);
+    return result;
+}
+
 - (BOOL)writeImageToDisk:(NSString *)name
 {
     NSString *filePath = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), name];
