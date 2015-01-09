@@ -30,6 +30,7 @@
 		4FF408DC19C89D99005751BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408DB19C89D99005751BC /* CoreGraphics.framework */; };
 		4FF408DF19C92EF7005751BC /* UIImage+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF408DE19C92EF7005751BC /* UIImage+Cadenza.m */; };
 		4FF408E119C9343B005751BC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF408E019C9343B005751BC /* AVFoundation.framework */; };
+		4FF5A30F1A59747700558146 /* NSArray+Cadenza.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF5A30E1A59747700558146 /* NSArray+Cadenza.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		4FF408DD19C92EF7005751BC /* UIImage+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Cadenza.h"; sourceTree = "<group>"; };
 		4FF408DE19C92EF7005751BC /* UIImage+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Cadenza.m"; sourceTree = "<group>"; };
 		4FF408E019C9343B005751BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4FF5A30D1A59747700558146 /* NSArray+Cadenza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Cadenza.h"; sourceTree = "<group>"; };
+		4FF5A30E1A59747700558146 /* NSArray+Cadenza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Cadenza.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				4FC5B1AB1A521D3900361347 /* NSObject+Cadenza.m */,
 				4FC5B19F1A5006AA00361347 /* NSString+Cadenza.h */,
 				4FC5B1A01A5006AA00361347 /* NSString+Cadenza.m */,
+				4FF5A30D1A59747700558146 /* NSArray+Cadenza.h */,
+				4FF5A30E1A59747700558146 /* NSArray+Cadenza.m */,
 			);
 			path = Cadenza;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				3EE9452C1A1AEBD6009933B5 /* UIAlertView+Cadenza.m in Sources */,
 				4FC5B19E1A5004AB00361347 /* NSMutableAttributedString+Cadenza.m in Sources */,
 				3E47501D19E7EA0E00E740AB /* NSObject+Cadenza.m in Sources */,
+				4FF5A30F1A59747700558146 /* NSArray+Cadenza.m in Sources */,
 				4FF408B519C89AF9005751BC /* Cadenza.m in Sources */,
 				3E47501A19E7E6EE00E740AB /* UIImageView+Cadenza.m in Sources */,
 				4FC5B1A91A521D1B00361347 /* ALAsset+Cadenza.m in Sources */,
