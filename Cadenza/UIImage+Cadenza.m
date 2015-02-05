@@ -85,9 +85,9 @@
 
 - (UIImage *)resizeImageAspectFit:(CGSize)requiredSize
 {
-    UIGraphicsBeginImageContext(requiredSize);
     CGRect rect = AVMakeRectWithAspectRatioInsideRect(self.size, CGRectMake(0, 0, requiredSize.width, requiredSize.height));
-    [self drawInRect:rect];
+    UIGraphicsBeginImageContext(rect.size);
+    [self drawInRect:CGRectMake(0, 0, rect.size.width, rect.size.height)];
     UIImage* resizedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return resizedImage;
