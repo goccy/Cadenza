@@ -197,6 +197,10 @@
 
 - (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration
 {
+    UILongPressGestureRecognizer *prevLongPressGesture = [self longPressRecognizer];
+    if (prevLongPressGesture) {
+        [self removeGestureRecognizer:prevLongPressGesture];
+    }
     objc_setAssociatedObject(self, @"longPressEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressEvent:)];
     longPress.minimumPressDuration = duration;

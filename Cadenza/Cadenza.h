@@ -20,6 +20,7 @@
 #import "UIColor+Cadenza.h"
 #import "NSMutableAttributedString+Cadenza.h"
 #import "NSArray+Cadenza.h"
+#import "UISearchBar+Cadenza.h"
 
 @interface Cadenza : NSObject
 
