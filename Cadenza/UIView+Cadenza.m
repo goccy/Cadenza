@@ -165,6 +165,10 @@
 
 - (void)singleTap:(void(^)(UIGestureRecognizer *))callback
 {
+    UITapGestureRecognizer *prevTapGesture = [self singleTapRecognizer];
+    if (prevTapGesture) {
+        [self removeGestureRecognizer:prevTapGesture];
+    }
     objc_setAssociatedObject(self, @"singleTapEventHandler", callback, OBJC_ASSOCIATION_RETAIN);
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapEvent:)];
     [self addGestureRecognizer:singleTap];

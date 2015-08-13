@@ -10,6 +10,7 @@
 
 @interface UISearchBar (Cadenza)
 
+- (UIImageView *)searchIcon;
 - (UITextField *)searchTextField;
 
 @end
