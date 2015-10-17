@@ -199,7 +199,7 @@
     if (callback) callback(sender);
 }
 
-- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *sender, BOOL isInsideTouchPoint))callback duration:(CGFloat)duration
 {
     UILongPressGestureRecognizer *prevLongPressGesture = [self longPressRecognizer];
     if (prevLongPressGesture) {
@@ -232,8 +232,13 @@
 
 - (void)longPressEvent:(UILongPressGestureRecognizer *)sender
 {
-    void(^callback)(UILongPressGestureRecognizer *) = objc_getAssociatedObject(self, @"longPressEventHandler");
-    if (callback) callback(sender);
+    void(^callback)(UILongPressGestureRecognizer *, BOOL) = objc_getAssociatedObject(self, @"longPressEventHandler");
+    if (callback) {
+        CGPoint touchPoint    = [sender locationOfTouch:0 inView:sender.view];
+        CGSize size           = sender.view.frame.size;
+        BOOL isInsideTouchPoint = CGRectContainsPoint(CGRectMake(0, 0, size.width, size.height), touchPoint);
+        callback(sender, isInsideTouchPoint);
+    }
 }
 
 - (void)rotate:(void(^)(UIRotationGestureRecognizer *))callback

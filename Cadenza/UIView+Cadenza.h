@@ -53,7 +53,7 @@
 - (void)deactivateRotate;
 - (void)activatePinch;
 - (void)deactivatePinch;
-- (void)longPress:(void(^)(UILongPressGestureRecognizer *))callback duration:(CGFloat)duration;
+- (void)longPress:(void(^)(UILongPressGestureRecognizer *sender, BOOL isInsideTouchPoint))callback duration:(CGFloat)duration;
 - (void)rotate:(void(^)(UIRotationGestureRecognizer *))callback;
 - (void)pinch:(void(^)(UIPinchGestureRecognizer *))callback;
 
